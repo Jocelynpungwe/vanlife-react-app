@@ -115,6 +115,15 @@ footer {
   transform: translate(1px, 1px);
 }
 
+.fake-log-out-button{
+  border: none;
+  color: red;
+  background: none;
+  font-weight: 700;
+  cursor: pointer;  
+
+}
+
 /*** HOME PAGE ***/
 .home-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
@@ -127,6 +136,17 @@ footer {
   color: white;
   padding: 45px 23px;
 }
+
+@media (min-width: 750px) {
+  .home-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-info-container{
+    max-width: 850px;
+  }
+} 
 
 .home-container h1 {
   font-weight: 700;
@@ -542,6 +562,14 @@ i[class*="van-type-"] {
 
 .login-error {
   color: red;
+}
+
+.login-password{
+  display: block;
+  width: 400px;
+  margin-right: auto;
+  padding-left: 30px;
+  font-weight: 600;
 }
 
 .host-dashboard-earnings {

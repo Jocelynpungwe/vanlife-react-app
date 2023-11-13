@@ -38,42 +38,48 @@ export default function Login() {
     }
 
     return (
-        <div className="login-container">
-            {
-                location.state?.message &&
-                    <h3 className="login-error">{location.state.message}</h3>
-            }
-            <h1>Sign in to your account</h1>
-            {
-                error?.message &&
-                    <h3 className="login-error">{error.message}</h3>
-            }
+        <>
+            <div className="login-password">
+                <p>Use email: b@b.com</p>
+                <p>Use password: p123</p> 
+            </div>
+            <div className="login-container">
+                {
+                    location.state?.message &&
+                        <h3 className="login-error">{location.state.message}</h3>
+                }
+                <h1>Sign in to your account</h1>
+                {
+                    error?.message &&
+                        <h3 className="login-error">{error.message}</h3>
+                }
 
-            <form onSubmit={handleSubmit} className="login-form">
-                <input
-                    name="email"
-                    onChange={handleChange}
-                    type="email"
-                    placeholder="Email address"
-                    value={loginFormData.email}
-                />
-                <input
-                    name="password"
-                    onChange={handleChange}
-                    type="password"
-                    placeholder="Password"
-                    value={loginFormData.password}
-                />
-                <button
-                    disabled={status === "submitting"}
-                >
-                    {status === "submitting"
-                        ? "Logging in..."
-                        : "Log in"
-                    }
-                </button>
-            </form>
-        </div>
+                <form onSubmit={handleSubmit} className="login-form">
+                    <input
+                        name="email"
+                        onChange={handleChange}
+                        type="email"
+                        placeholder="Email address"
+                        value={loginFormData.email}
+                    />
+                    <input
+                        name="password"
+                        onChange={handleChange}
+                        type="password"
+                        placeholder="Password"
+                        value={loginFormData.password}
+                    />
+                    <button
+                        disabled={status === "submitting"}
+                    >
+                        {status === "submitting"
+                            ? "Logging in..."
+                            : "Log in"
+                        }
+                    </button>
+                </form>
+            </div>
+        </>
     )
 
 }
